@@ -15,12 +15,15 @@
     color: #49557e;
     font-size: 18px;
 }
+.navbar-menu li{
+    cursor: pointer;
+}
 
 .navbar-right{
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
 }
 
 .navbar button{
@@ -40,5 +43,19 @@
  .navbar .active{
     padding-bottom: 2px;
     border-bottom: 2px  solid #49557e;
+
+}
+.navbar-search-icon{
+    position: relative;
+}
+
+.navbar-search-icon .dot{
+    position: absolute;
+    min-height: 10px;
+    min-width: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
 
 }
