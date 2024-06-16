@@ -57,6 +57,7 @@ const Cart = () => {
             </div>
           </div>
           <button>PROCEED TO CHECKOUT</button>
+          </div>
           <div className="cart-promocode">
             <div>
               <p>If you have a promo code, Enter it here</p>
@@ -67,7 +68,6 @@ const Cart = () => {
             </div>
           </div>
         </div>
-      </div>
     </div>
   )
 }
