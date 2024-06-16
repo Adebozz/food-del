@@ -39,8 +39,8 @@ const Cart = () => {
       </div>
       <div className="cart-bottom">
         <div className="cart-total">
-          
-          <div><h2>Cart Totals</h2>
+          <h2>Cart Totals</h2>
+          <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
               <p>{0}</p>
@@ -55,8 +55,8 @@ const Cart = () => {
               <b>Total</b>
               <b>{0}</b>
             </div>
-            <button>PROCEED TO CHECKOUT</button>
           </div>
+          <button>PROCEED TO CHECKOUT</button>
           <div className="cart-promocode">
             <div>
               <p>If you have a promo code, Enter it here</p>
