@@ -1,7 +1,7 @@
 import React from 'react'
 import './Order.css'
 
-const order = () => {
+const Order = () => {
   return (
     <div>
       
@@ -9,4 +9,4 @@ const order = () => {
   )
 }
 
-export default order
+export default Order
