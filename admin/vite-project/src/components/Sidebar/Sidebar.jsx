@@ -15,7 +15,7 @@ const Sidebar = () => {
           <p>List Items</p>
         </div>
         <div className="sidebar-option">
-          <img src={assets.order_icon} alt="" />
+          <img className="order-icon" src={assets.order_icon} alt="" />
           <p>Orders</p>
         </div>
       </div>
