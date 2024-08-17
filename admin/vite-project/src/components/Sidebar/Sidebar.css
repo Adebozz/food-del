@@ -30,7 +30,7 @@
     height: 25px;
 }
 
-.sidebar-option.activeP{
+.sidebar-option.active{
     background-color: #fff0ed;
     border-color: crimson;
 }
