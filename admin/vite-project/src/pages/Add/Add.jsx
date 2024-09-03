@@ -12,6 +12,12 @@ const Add = () => {
       category:"Salad"
     })
 
+    const onChangeHandler = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setData(data=>({...data,[name]:value}))
+    }
+
   return (
     <div className='add'>
       <form className='flex-col'>
@@ -24,11 +30,11 @@ const Add = () => {
           </div>
           <div className="add-product-name flex-col">
             <p>Product name</p>
-            <input  type="text" name='name' placeholder='Type here' />
+            <input onChange={onChangeHandler} value={data.name} type="text" name='name' placeholder='Type here' />
           </div>
           <div className="add-product-description flex-col">
             <p>Product description</p>
-            <textarea name="description" rows="6" placeholder='Write content here' required></textarea>
+            <textarea onChange={onChangeHandler}  name="description" rows="6" placeholder='Write content here' required></textarea>
           </div>
           <div className="add-category-price">
             <div className="add-category flex-col">
