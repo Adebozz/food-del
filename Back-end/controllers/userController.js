@@ -1,4 +1,4 @@
-import userModel from "../models/userModel";
+import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs"
 import validator  from "validator";
@@ -51,3 +51,5 @@ const registerUser = async (req,res) => {
         res.json({success:false,message:"Error"})
     }
 }
+
+export {loginUser, registerUser}
