@@ -10,7 +10,7 @@ const loginUser = async (req,res) => {
 }
 
 const createToken = (id) => {
-    return jwt.sign({id},process.env.JWT_SERCRET)
+    return jwt.sign({id},process.env.JWT_SECRET)
 }
 
 //registered user
