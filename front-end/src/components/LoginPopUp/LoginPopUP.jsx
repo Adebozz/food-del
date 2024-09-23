@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './LoginPopUp.css'
 import { assets } from '../../assets/assets'
 
@@ -14,8 +14,12 @@ const LoginPopUP = ({setShowLogin}) => {
     const onChangeHandler = (event) => {
       const name = event.target.name;
       const value = event.target.value;
-      setdata(data=>({...data,[name]:value}))
+      setData(data=>({...data,[name]:value}))
     }
+
+    useEffect(()=>{
+      console.log(data);
+    },[data]);
 
   return (
     <div className='login-popup'>
@@ -25,9 +29,9 @@ const LoginPopUP = ({setShowLogin}) => {
             <img onClick={()=>setShowLogin(false)} src={assets.cross_icon} alt="" />
         </div>
         <div className="login-popup-inputs">
-          {currState==="Login"?<></>:<input name='name' onChange={onChangeHandler} value={data.name} type="text" name="" id="" placeholder='Your name' required/>}
-          <input type="text" name="" id="" placeholder='Your email' required/>
-          <input type="text" name="" id="" placeholder='Password ' required/>
+          {currState==="Login"?<></>:<input name='name' onChange={onChangeHandler} value={data.name} type="text" id="" placeholder='Your name' required/>}
+          <input name='email' onChange={onChangeHandler} value={data.name} type="text" id="" placeholder='Your email' required/>
+          <input name='password' onChange={onChangeHandler} value={data.password} type="text" id="" placeholder='Password ' required/>
           
         </div>
         <button>
