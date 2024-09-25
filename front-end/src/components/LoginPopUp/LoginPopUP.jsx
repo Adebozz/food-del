@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, {useContext, useState } from 'react'
 import './LoginPopUp.css'
 import { assets } from '../../assets/assets'
+import { StoreContext } from '../../context/StoreContext'
+import axios from 'axios'
 
 const LoginPopUP = ({setShowLogin}) => {
 
+
+    const {url} = useContext(StoreContext);
     const [currState, setCurrState] = useState("Login")
     const [data,setData] = useState({
       name:"",
@@ -17,13 +21,28 @@ const LoginPopUP = ({setShowLogin}) => {
       setData(data=>({...data,[name]:value}))
     }
 
-    useEffect(()=>{
-      console.log(data);
-    },[data]);
+    const onLogin = async (event) => {
+      event.preventDefault()
+      let newUrl = url;
+      if (currState==="Login"){
+        newUrl += "/api/user/login"
+      }
+      else{
+        newUrl += "/api/user/register"
+      }
+
+      const response = await axios.post(newUrl,data);
+
+      if (response.data.success) {
+        
+      }
+    }
+    
+   
 
   return (
     <div className='login-popup'>
-      <form className='login-popup-container'>
+      <form onSubmit={onLogin} className='login-popup-container'>
         <div className="login-popup-title">
             <h2>{currState}</h2>
             <img onClick={()=>setShowLogin(false)} src={assets.cross_icon} alt="" />
@@ -34,7 +53,7 @@ const LoginPopUP = ({setShowLogin}) => {
           <input name='password' onChange={onChangeHandler} value={data.password} type="text" id="" placeholder='Password ' required/>
           
         </div>
-        <button>
+        <button type='submit'>
           {currState==="Sign Up"?"Create account":"Login"}
         </button>
         <div className="login-popup-condition">
